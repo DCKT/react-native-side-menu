@@ -140,7 +140,7 @@ export default class SideMenu extends React.Component {
     if (this.isOpen) {
       overlay = (
         <TouchableWithoutFeedback onPress={() => this.openMenu(false)}>
-          <View style={styles.overlay} />
+          <View style={[styles.overlay, { backgroundColor: this.props.overlayBackground }]} />
         </TouchableWithoutFeedback>
       );
     }
@@ -150,8 +150,7 @@ export default class SideMenu extends React.Component {
     const style = [
       styles.frontView,
       { width, height },
-      this.props.animationStyle(this.state.left),
-      { backgroundColor: this.props.overlayBackground },
+      this.props.animationStyle(this.state.left),,
     ];
 
     return (
